@@ -8,7 +8,7 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
 import { DetailsComponent } from './pages/details/details.component';
 import { SearchFilterPipe } from './utils/search-filter.pipe';
 import { HighlighterPipe } from './utils/highlighter.pipe';
-import { ScrollViewDirective } from './components/auto-complete/scroll-view.directive';
+import { ScrollViewDirective } from './directives/scroll-view.directive';
 
 @NgModule({
   declarations: [

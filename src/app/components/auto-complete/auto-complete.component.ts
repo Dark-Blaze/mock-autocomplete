@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
-import { Model, ListMessageModel } from './model';
-import { DataService } from './data.service';
+import { Model, ListMessageModel } from 'models/model';
+import { DataService } from 'services/data.service';
 import { SearchFilterPipe } from 'utils/search-filter.pipe';
 
 enum KEY_SUPPORT {
@@ -94,7 +94,7 @@ export class AutoCompleteComponent implements OnInit {
   @HostListener('document:keyup', ['$event'])
   keyup(e: KeyboardEvent): void {
     this.keyHandler(e);
-    this.setDataAndPosition();
+    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
   }
 
   /**
@@ -116,21 +116,31 @@ export class AutoCompleteComponent implements OnInit {
   setSelectedItem(item: Model): void {
     this.selectedItem = item;
   }
-
   getCurrentPosition(): number {
     return this.currentPosition;
   }
-
   setCurrentPosition(pos: number): void {
     this.currentPosition = pos;
   }
-
   setActiveItem(item: Model): void {
     this.activeItem = item;
   }
   getActiveItem(): Model {
     return this.activeItem;
   }
+  setFilteredData(items: Array<Model>): void {
+    this.filteredData = items;
+  }
+  getFilteredData(): Array<Model> {
+    return this.filteredData;
+  }
+  isStartPosition(): boolean {
+    return this.getCurrentPosition() === 0;
+  }
+  isEndPosition(): boolean {
+    return this.getCurrentPosition() === this.getFilteredData().length - 1;
+  }
+
 
   /**
    * This method will identify the up, down and enter key events and perform appropriate actions
@@ -150,18 +160,10 @@ export class AutoCompleteComponent implements OnInit {
       const code = e['keyCode'];
       if (code === KEY_SUPPORT.ARROW_UP) {
         e.preventDefault();
-        if (this.getCurrentPosition() === 0) {
-          this.setCurrentPosition(0);
-        } else {
-          this.setCurrentPosition(this.getCurrentPosition() - 1)
-        }
+        this.setCurrentPosition(this.isStartPosition() ? 0 : this.getCurrentPosition() - 1);
       } else if (code === KEY_SUPPORT.ARROW_DOWN) {
         e.preventDefault();
-        if (this.getCurrentPosition() === this.getFilteredData().length - 1) {
-          this.setCurrentPosition(this.getFilteredData().length - 1);
-        } else {
-          this.setCurrentPosition(this.currentPosition + 1);
-        }
+        this.setCurrentPosition(this.isEndPosition() ? this.getFilteredData().length - 1 : this.getCurrentPosition() + 1);
       } else if (code === KEY_SUPPORT.ENTER) {
         this.itemChange({
           e,
@@ -174,23 +176,11 @@ export class AutoCompleteComponent implements OnInit {
     }
   }
 
-  setFilteredData(items: Array<Model>): void {
-    this.filteredData = items;
-  }
-
-  getFilteredData(): Array<Model> {
-    return this.filteredData;
-  }
-
-  /**
-   * This method will set the filteredData set and reset the current position everytime the data is re-filtered.
-   *
-   * @memberof AutoCompleteComponent
-   */
-  setDataAndPosition(): void {
-    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
-    if (!this.getFilteredData().length || this.getFilteredData().length === 1) {
-      this.setCurrentPosition(0);
+  @HostListener('document:click', ['$event'])
+  onclick(e: Event) {
+    if (e.target['className'].includes('list-item') || e.target['className'].includes('search-input')) {
+    } else {
+      this.showDropdown = false;
     }
   }
 
@@ -206,13 +196,13 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
   itemChange(data: ListMessageModel) {
-    if (data.from !== 'mouse') {
-      this.setCurrentPosition(data.index);
-    }
     this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
     if (data.select) {
       this.setSelectedItem(data.item);
-      this.resetBehaivour();
+      this.setFilteredData([]);
+      this.showDropdown = false;
+      this.searchStr = this.selectedItem.name;
+      this.showSpan = true;
     }
   }
 
@@ -221,11 +211,12 @@ export class AutoCompleteComponent implements OnInit {
    *
    * @memberof AutoCompleteComponent
    */
-  resetBehaivour() {
+
+  resetData() {
+    this.searchStr = '';
+    this.showSpan = false;
+    this.setSelectedItem({} as Model);
     this.setFilteredData([]);
-    this.showSpan = true;
-    this.showDropdown = false;
-    this.searchStr = this.selectedItem.name;
   }
 
   /**
@@ -235,7 +226,8 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
   onFocus(e: any) {
-    this.setDataAndPosition();
+    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
+    this.setCurrentPosition(-1);
     this.showDropdown = true;
   }
 
@@ -246,7 +238,7 @@ export class AutoCompleteComponent implements OnInit {
    */
   hideSpan() {
     this.showSpan = false;
-    setTimeout(() => {this.searchElement.nativeElement.focus()}, 0);
+    setTimeout(() => { this.searchElement.nativeElement.focus()}, 0);
   }
 
 }

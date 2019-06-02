@@ -4,8 +4,7 @@
       class="meta font-regular"
       *ngIf="showSpan"
       [ngClass]="{ 'w-100': showSpan, 'w-0': !showSpan }"
-      (click)="hideSpan()"
-    >
+      (click)="hideSpan()">
       {{ selectedItem.name }}
     </div>
     <input
@@ -15,8 +14,8 @@
       placeholder="Search Users by ID, address, name...."
       [(ngModel)]="searchStr"
       (focus)="onFocus($event)"
-      #search
-    />
+      #search />
+    <span class="clear font-regular-italic" (click)="resetData()">Clear</span>
   </div>
   <span *ngIf="showDropdown">
     <div
@@ -25,15 +24,13 @@
       [rowHeight]="151"
       [totalRowElements]="data.length"
       [currentItem]="currentPosition"
-      [maxHeight]="400"
-    >
+      [maxHeight]="400">
       <app-list-view
         [listData]="filteredData"
         [selectedDataItem]="activeItem"
         [searchString]="searchStr"
         (itemChange)="itemChange($event)"
-        *ngIf="filteredData.length"
-      ></app-list-view>
+        *ngIf="filteredData.length" ></app-list-view>
     </div>
     <div class="no-result" *ngIf="!filteredData.length && searchStr !== ''">
       No Users Found
