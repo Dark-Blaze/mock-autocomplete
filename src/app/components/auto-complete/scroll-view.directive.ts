@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, AfterViewInit, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[appScrollView]'
