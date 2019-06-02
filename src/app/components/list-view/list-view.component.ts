@@ -17,7 +17,7 @@ export class ListViewComponent implements OnInit {
 
   constructor(private searchFilter: SearchFilterPipe) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   fireMouseOver(e: any, data: Model, index: number): void {
@@ -25,11 +25,11 @@ export class ListViewComponent implements OnInit {
     this.itemChange.emit({ e, index, from: 'mouse', select: false } as ListMessageModel);
   }
 
-  selectItem(item: Model, index: number) {
+  selectItem(item: Model, index: number): void {
     this.itemChange.emit({ item, index, select: true, from: 'mouse' } as ListMessageModel)
   }
 
-  isItemFound(item: Model) {
+  isItemFound(item: Model): boolean {
     if (item.items.indexOf(this.searchString) !== -1) {
       return true;
     }
