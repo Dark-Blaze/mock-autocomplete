@@ -1,0 +1,11 @@
+<div class="list-view">
+  <ul class="list">
+    <li *ngFor="let item of listData; index as i" (click)="selectItem(item, i)" class="list-item" [ngClass]="{'active': selectedDataItem && selectedDataItem.id === item.id}" (mouseover)="fireMouseOver($event, item, i)">
+      <div class="list-item-value id font-bold" innerHTML="{{ item.id | highlighter : searchString}}"></div>
+      <div class="list-item-value name font-regular-italic" innerHTML="{{ item.name | highlighter : searchString}}"></div>
+      <div class="list-item-value address" innerHTML="{{ item.address | highlighter : searchString}}"></div>
+      <div class="list-item-value items" *ngIf="isItemFound(item)"><span class="highlight">"{{searchString}}"</span> found in Items </div>
+      <div class="list-item-value items font-regular-italic text-mute" *ngIf="!isItemFound(item)">No match in Items</div>
+    </li>
+  </ul>
+</div>

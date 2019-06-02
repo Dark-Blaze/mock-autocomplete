@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/reset.scss';
+@import './styles/fonts';
+
+.highlight {
+  color: #4f94fb;
+  font-weight: 700;
+}
+
+body {
+  @extend .font-regular;
+  font-size: 14px;
+}
+
+.text-mute {
+  color: gray;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c6c6c6;
+  border-radius: 10px;
+  &:hover {
+    background: #b1b1b1;
+  }
+}

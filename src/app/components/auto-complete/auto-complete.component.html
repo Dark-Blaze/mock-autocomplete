@@ -1,0 +1,42 @@
+<div class="auto-complete">
+  <div class="input-container">
+    <div
+      class="meta font-regular"
+      *ngIf="showSpan"
+      [ngClass]="{ 'w-100': showSpan, 'w-0': !showSpan }"
+      (click)="hideSpan()"
+    >
+      {{ selectedItem.name }}
+    </div>
+    <input
+      [hidden]="showSpan"
+      type="text"
+      class="search-input font-regular"
+      placeholder="Search Users by ID, address, name...."
+      [(ngModel)]="searchStr"
+      (focus)="onFocus($event)"
+      #search
+    />
+  </div>
+  <span *ngIf="showDropdown">
+    <div
+      class="scroll-view"
+      appScrollView
+      [rowHeight]="151"
+      [totalRowElements]="data.length"
+      [currentItem]="currentPosition"
+      [maxHeight]="400"
+    >
+      <app-list-view
+        [listData]="filteredData"
+        [selectedDataItem]="activeItem"
+        [searchString]="searchStr"
+        (itemChange)="itemChange($event)"
+        *ngIf="filteredData.length"
+      ></app-list-view>
+    </div>
+    <div class="no-result" *ngIf="!filteredData.length && searchStr !== ''">
+      No Users Found
+    </div>
+  </span>
+</div>

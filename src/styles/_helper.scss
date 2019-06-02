@@ -1,0 +1,27 @@
+$sizes: (xs: 5px, sm: 10px, md: 15px, lg: 20px, xl: 30px, xxl: 80px);
+$rules : (margin, padding);
+$direction: (top, right, bottom, left, all);
+
+@each $rule in $rules {
+  @each $side in $direction {
+    @each $key, $size in $sizes {
+      @if ($side == 'all') {
+        .#{$rule}-#{$key} {
+          #{$rule}: #{$size}
+        }
+      } @else {
+        .#{$rule}-#{$side}-#{$key} {
+          #{$rule}-#{$side}: #{$size}
+        }
+      }
+    }
+  }
+}
+
+@mixin animation() {
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
