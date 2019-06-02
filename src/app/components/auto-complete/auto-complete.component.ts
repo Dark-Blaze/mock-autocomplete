@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
-import { Model, ListMessageModel } from './model';
-import { DataService } from './data.service';
+import { Model, ListMessageModel } from 'models/model';
+import { DataService } from 'services/data.service';
 import { SearchFilterPipe } from 'utils/search-filter.pipe';
 
 enum KEY_SUPPORT {

@@ -15,6 +15,15 @@
       ],
       "utils/*": [
         "src/app/utils/*"
+      ],
+      "services/*" :[
+        "src/app/services/*"
+      ],
+      "models/*":[
+        "src/app/models/*"
+      ],
+      "directives/*": [
+        "src/app/directives/*"
       ]
     }
   },
