@@ -10,5 +10,11 @@
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"
-  ]
+  ],
+  "paths": {
+    "src/*": ["src/*"],
+    "components/*": ["src/app/components/*"],
+    "pages/*": ["app/pages/*"],
+    "utils/*": ["src/app/utils/*"]
+},
 }
