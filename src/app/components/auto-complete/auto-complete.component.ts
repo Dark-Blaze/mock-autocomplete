@@ -177,7 +177,7 @@ export class AutoCompleteComponent implements OnInit {
   }
 
   @HostListener('document:click', ['$event'])
-  onclick(e: Event) {
+  onclick(e: Event): void {
     if (e.target['className'].includes('list-item') || e.target['className'].includes('search-input')) {
     } else {
       this.showDropdown = false;
@@ -195,7 +195,7 @@ export class AutoCompleteComponent implements OnInit {
    * @param {ListMessageModel} data
    * @memberof AutoCompleteComponent
    */
-  itemChange(data: ListMessageModel) {
+  itemChange(data: ListMessageModel): void {
     this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
     if (data.select) {
       this.setSelectedItem(data.item);
@@ -212,7 +212,7 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
 
-  resetData() {
+  resetData(): void {
     this.searchStr = '';
     this.showSpan = false;
     this.setSelectedItem({} as Model);
@@ -225,7 +225,7 @@ export class AutoCompleteComponent implements OnInit {
    * @param {*} e
    * @memberof AutoCompleteComponent
    */
-  onFocus(e: any) {
+  onFocus(e: any): void {
     this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
     this.setCurrentPosition(-1);
     this.showDropdown = true;
@@ -236,7 +236,7 @@ export class AutoCompleteComponent implements OnInit {
    *
    * @memberof AutoCompleteComponent
    */
-  hideSpan() {
+  hideSpan(): void {
     this.showSpan = false;
     setTimeout(() => { this.searchElement.nativeElement.focus()}, 0);
   }
