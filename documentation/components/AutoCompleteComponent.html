@@ -1,0 +1,2032 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mock-autocomplete documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">mock-autocomplete documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AutoCompleteComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/auto-complete/auto-complete.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-auto-complete</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./auto-complete.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./auto-complete.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeItem">activeItem</a>
+                            </li>
+                            <li>
+                                <a href="#currentPosition">currentPosition</a>
+                            </li>
+                            <li>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                <a href="#filteredData">filteredData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#searchElement">searchElement</a>
+                            </li>
+                            <li>
+                                <a href="#searchStr">searchStr</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItem">selectedItem</a>
+                            </li>
+                            <li>
+                                <a href="#showDropdown">showDropdown</a>
+                            </li>
+                            <li>
+                                <a href="#showSpan">showSpan</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getActiveItem">getActiveItem</a>
+                            </li>
+                            <li>
+                                <a href="#getCurrentPosition">getCurrentPosition</a>
+                            </li>
+                            <li>
+                                <a href="#getFilteredData">getFilteredData</a>
+                            </li>
+                            <li>
+                                <a href="#hideSpan">hideSpan</a>
+                            </li>
+                            <li>
+                                <a href="#isEndPosition">isEndPosition</a>
+                            </li>
+                            <li>
+                                <a href="#isStartPosition">isStartPosition</a>
+                            </li>
+                            <li>
+                                <a href="#itemChange">itemChange</a>
+                            </li>
+                            <li>
+                                <a href="#keyHandler">keyHandler</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFocus">onFocus</a>
+                            </li>
+                            <li>
+                                <a href="#resetData">resetData</a>
+                            </li>
+                            <li>
+                                <a href="#setActiveItem">setActiveItem</a>
+                            </li>
+                            <li>
+                                <a href="#setCurrentPosition">setCurrentPosition</a>
+                            </li>
+                            <li>
+                                <a href="#setFilteredData">setFilteredData</a>
+                            </li>
+                            <li>
+                                <a href="#setSelectedItem">setSelectedItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#document:click">document:click</a>
+                            </li>
+                            <li>
+                                <a href="#document:keydown">document:keydown</a>
+                            </li>
+                            <li>
+                                <a href="#document:keyup">document:keyup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, searchFilter: SearchFilterPipe)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>searchFilter</td>
+                                                  
+                                                        <td>
+                                                                    <code>SearchFilterPipe</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:click"></a>
+                    <span class="name">
+                        <b>
+                            document:click
+                        </b>
+                        <a href="#document:click"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:click(e: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:180</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:keydown"></a>
+                    <span class="name">
+                        <b>
+                            document:keydown
+                        </b>
+                        <a href="#document:keydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:keydown(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This event listener is to make sure that the cursor position does not move when the up and down keystrokes are encountered.
+The reason for this to be in keydown is because before keyup triggers, the cursor would have shifted position.</p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:keyup"></a>
+                    <span class="name">
+                        <b>
+                            document:keyup
+                        </b>
+                        <a href="#document:keyup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:keyup(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This event listener is to make sure that if the event source is the input field, the up and down keybindings work.
+The reason for this to be in keyup is because handling this in keydown events would work for the last value and not the current value.</p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActiveItem"></a>
+                    <span class="name">
+                        <b>
+                            getActiveItem
+                        </b>
+                        <a href="#getActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getActiveItem()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Model.html" target="_self" >Model</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPosition"></a>
+                    <span class="name">
+                        <b>
+                            getCurrentPosition
+                        </b>
+                        <a href="#getCurrentPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCurrentPosition()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilteredData"></a>
+                    <span class="name">
+                        <b>
+                            getFilteredData
+                        </b>
+                        <a href="#getFilteredData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFilteredData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Model.html" target="_self" >Array&lt;Model&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideSpan"></a>
+                    <span class="name">
+                        <b>
+                            hideSpan
+                        </b>
+                        <a href="#hideSpan"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideSpan()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:239</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method will hide the display element and show the input field.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEndPosition"></a>
+                    <span class="name">
+                        <b>
+                            isEndPosition
+                        </b>
+                        <a href="#isEndPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEndPosition()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isStartPosition"></a>
+                    <span class="name">
+                        <b>
+                            isStartPosition
+                        </b>
+                        <a href="#isStartPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isStartPosition()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemChange"></a>
+                    <span class="name">
+                        <b>
+                            itemChange
+                        </b>
+                        <a href="#itemChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>itemChange(data: <a href="../interfaces/ListMessageModel.html">ListMessageModel</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="198"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:198</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method will identify the event propogation source and perform appropriate actions.
+If the source is mouse:
+Only the @var activeItem will be set with the @var currentPosition</p>
+<p>The event communication follows the @interface ListMessageModel. If the action is the select the item(on mouse click) then the</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/ListMessageModel.html" target="_self" >ListMessageModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keyHandler"></a>
+                    <span class="name">
+                        <b>
+                            keyHandler
+                        </b>
+                        <a href="#keyHandler"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>keyHandler(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method will identify the up, down and enter key events and perform appropriate actions
+For UP and DOWN
+Navigate to the previous and next row item respectively. If the item is the first row, then the up key won&#39;t do anything.
+If the item is the last viewable, then scrollview will start shifting the view appropriately.
+If the item is the last item, the down key won&#39;t do anything.</p>
+<p>For ENTER
+The current @var activeItem will be selected and assigned to @var selectedItem</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is a lifecycle hook called as soon as this component is initialized.
+This method will initialize the @var activeItem</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFocus"></a>
+                    <span class="name">
+                        <b>
+                            onFocus
+                        </b>
+                        <a href="#onFocus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFocus(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:228</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method will set the data and position when the user focuses in the input field.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetData"></a>
+                    <span class="name">
+                        <b>
+                            resetData
+                        </b>
+                        <a href="#resetData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method will reset the dropdown view</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setActiveItem"></a>
+                    <span class="name">
+                        <b>
+                            setActiveItem
+                        </b>
+                        <a href="#setActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setActiveItem(item: <a href="../interfaces/Model.html">Model</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="../interfaces/Model.html" target="_self" >Model</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setCurrentPosition"></a>
+                    <span class="name">
+                        <b>
+                            setCurrentPosition
+                        </b>
+                        <a href="#setCurrentPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setCurrentPosition(pos: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pos</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setFilteredData"></a>
+                    <span class="name">
+                        <b>
+                            setFilteredData
+                        </b>
+                        <a href="#setFilteredData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setFilteredData(items: <a href="../interfaces/Model.html">Array<Model></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                                <code><a href="../interfaces/Model.html" target="_self" >Array&lt;Model&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSelectedItem"></a>
+                    <span class="name">
+                        <b>
+                            setSelectedItem
+                        </b>
+                        <a href="#setSelectedItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSelectedItem(item: <a href="../interfaces/Model.html">Model</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="../interfaces/Model.html" target="_self" >Model</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeItem"></a>
+                        <span class="name">
+                            <b>
+                            activeItem</b>
+                            <a href="#activeItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Model.html" target="_self" >Model</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable is responsible for highlighting the selected/navigated to row item</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentPosition"></a>
+                        <span class="name">
+                            <b>
+                            currentPosition</b>
+                            <a href="#currentPosition"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>-1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable stores the index of the @var activeItem</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <span class="name">
+                            <b>
+                            data</b>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Model.html" target="_self" >Array&lt;Model&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable is responsible to get data from the dataService</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredData"></a>
+                        <span class="name">
+                            <b>
+                            filteredData</b>
+                            <a href="#filteredData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Model.html" target="_self" >Array&lt;Model&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable stores the generated filtered data from the  @var searchStr</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchElement"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            searchElement</b>
+                            <a href="#searchElement"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;search&#x27;, undefined)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchStr"></a>
+                        <span class="name">
+                            <b>
+                            searchStr</b>
+                            <a href="#searchStr"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable stores the search string from the input element</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItem"></a>
+                        <span class="name">
+                            <b>
+                            selectedItem</b>
+                            <a href="#selectedItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Model.html" target="_self" >Model</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable is responsible for storing the selected item either on mouse click or ENTER action</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showDropdown"></a>
+                        <span class="name">
+                            <b>
+                            showDropdown</b>
+                            <a href="#showDropdown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable toggles the visible state of the dropdown</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSpan"></a>
+                        <span class="name">
+                            <b>
+                            showSpan</b>
+                            <a href="#showSpan"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/components/auto-complete/auto-complete.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable toggles the visible states of either showing the selected value and input field</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, HostListener, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+import { Model, ListMessageModel } from &#x27;models/model&#x27;;
+import { DataService } from &#x27;services/data.service&#x27;;
+import { SearchFilterPipe } from &#x27;utils/search-filter.pipe&#x27;;
+
+enum KEY_SUPPORT {
+  ARROW_UP &#x3D; 38,
+  ARROW_DOWN &#x3D; 40,
+  ENTER &#x3D; 13
+}
+
+@Component({
+  selector: &#x27;app-auto-complete&#x27;,
+  templateUrl: &#x27;./auto-complete.component.html&#x27;,
+  styleUrls: [&#x27;./auto-complete.component.scss&#x27;]
+})
+export class AutoCompleteComponent implements OnInit {
+  @ViewChild(&#x27;search&#x27;, null) private searchElement: ElementRef;
+
+  /**
+   * This variable is responsible to get data from the dataService
+   *
+   * @type {Array&lt;Model&gt;}
+   * @memberof AutoCompleteComponent
+   */
+  data: Array&lt;Model&gt;;
+  /**
+   * This variable is responsible for highlighting the selected/navigated to row item
+   *
+   * @type {Model}
+   * @memberof AutoCompleteComponent
+   */
+  activeItem: Model;
+  /**
+   * This variable is responsible for storing the selected item either on mouse click or ENTER action
+   *
+   * @type {Model}
+   * @memberof AutoCompleteComponent
+   */
+  selectedItem: Model;
+  /**
+   * This variable stores the generated filtered data from the  @var searchStr
+   *
+   * @type {Array&lt;Model&gt;}
+   * @memberof AutoCompleteComponent
+   */
+  filteredData: Array&lt;Model&gt; &#x3D; [];
+  /**
+   * This variable stores the search string from the input element
+   *
+   * @memberof AutoCompleteComponent
+   */
+  searchStr &#x3D; &#x27;&#x27;;
+  /**
+   * This variable stores the index of the @var activeItem
+   *
+   * @memberof AutoCompleteComponent
+   */
+  currentPosition &#x3D; -1;
+  /**
+   * This variable toggles the visible states of either showing the selected value and input field
+   *
+   * @memberof AutoCompleteComponent
+   */
+  showSpan &#x3D; false;
+  /**
+   * This variable toggles the visible state of the dropdown
+   *
+   * @memberof AutoCompleteComponent
+   */
+  showDropdown &#x3D; false;
+
+  constructor(private dataService: DataService, private searchFilter: SearchFilterPipe) {
+    this.data &#x3D; this.dataService.getUserData();
+  }
+
+  /**
+   * This is a lifecycle hook called as soon as this component is initialized.
+   * This method will initialize the @var activeItem
+   *
+   * @memberof AutoCompleteComponent
+   */
+  ngOnInit() {
+    this.setActiveItem({} as Model);
+  }
+
+  /**
+   * This event listener is to make sure that if the event source is the input field, the up and down keybindings work.
+   * The reason for this to be in keyup is because handling this in keydown events would work for the last value and not the current value.
+   *
+   * @param {KeyboardEvent} e
+   * @memberof AutoCompleteComponent
+   */
+  @HostListener(&#x27;document:keyup&#x27;, [&#x27;$event&#x27;])
+  keyup(e: KeyboardEvent): void {
+    this.keyHandler(e);
+    this.setFilteredData(this.data.filter(i &#x3D;&gt; this.searchFilter.transform(this.searchStr, i)));
+  }
+
+  /**
+   * This event listener is to make sure that the cursor position does not move when the up and down keystrokes are encountered.
+   * The reason for this to be in keydown is because before keyup triggers, the cursor would have shifted position.
+   *
+   * @param {KeyboardEvent} e
+   * @memberof AutoCompleteComponent
+   */
+  @HostListener(&#x27;document:keydown&#x27;, [&#x27;$event&#x27;])
+  keydown(e: KeyboardEvent): void {
+    if (e.target[&#x27;className&#x27;].includes(&#x27;search-input&#x27;)) {
+      if (e.keyCode &#x3D;&#x3D;&#x3D; KEY_SUPPORT.ARROW_UP || e.keyCode &#x3D;&#x3D;&#x3D; KEY_SUPPORT.ARROW_DOWN) {
+        e.preventDefault();
+      }
+    }
+  }
+
+  setSelectedItem(item: Model): void {
+    this.selectedItem &#x3D; item;
+  }
+  getCurrentPosition(): number {
+    return this.currentPosition;
+  }
+  setCurrentPosition(pos: number): void {
+    this.currentPosition &#x3D; pos;
+  }
+  setActiveItem(item: Model): void {
+    this.activeItem &#x3D; item;
+  }
+  getActiveItem(): Model {
+    return this.activeItem;
+  }
+  setFilteredData(items: Array&lt;Model&gt;): void {
+    this.filteredData &#x3D; items;
+  }
+  getFilteredData(): Array&lt;Model&gt; {
+    return this.filteredData;
+  }
+  isStartPosition(): boolean {
+    return this.getCurrentPosition() &#x3D;&#x3D;&#x3D; 0;
+  }
+  isEndPosition(): boolean {
+    return this.getCurrentPosition() &#x3D;&#x3D;&#x3D; this.getFilteredData().length - 1;
+  }
+
+
+  /**
+   * This method will identify the up, down and enter key events and perform appropriate actions
+   * For UP and DOWN
+   * Navigate to the previous and next row item respectively. If the item is the first row, then the up key won&#x27;t do anything.
+   * If the item is the last viewable, then scrollview will start shifting the view appropriately.
+   * If the item is the last item, the down key won&#x27;t do anything.
+   *
+   * For ENTER
+   * The current @var activeItem will be selected and assigned to @var selectedItem
+   *
+   * @param {KeyboardEvent} e
+   * @memberof AutoCompleteComponent
+   */
+  keyHandler(e: KeyboardEvent): void {
+    if (e.target[&#x27;className&#x27;].includes(&#x27;search-input&#x27;) &amp;&amp; this.getFilteredData().length &gt; 0) {
+      const code &#x3D; e[&#x27;keyCode&#x27;];
+      if (code &#x3D;&#x3D;&#x3D; KEY_SUPPORT.ARROW_UP) {
+        e.preventDefault();
+        this.setCurrentPosition(this.isStartPosition() ? 0 : this.getCurrentPosition() - 1);
+      } else if (code &#x3D;&#x3D;&#x3D; KEY_SUPPORT.ARROW_DOWN) {
+        e.preventDefault();
+        this.setCurrentPosition(this.isEndPosition() ? this.getFilteredData().length - 1 : this.getCurrentPosition() + 1);
+      } else if (code &#x3D;&#x3D;&#x3D; KEY_SUPPORT.ENTER) {
+        this.itemChange({
+          e,
+          item: this.getFilteredData()[this.getCurrentPosition()],
+          select: true,
+          from: &#x27;keyboard&#x27;
+        } as ListMessageModel);
+      }
+      this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
+    }
+  }
+
+  @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
+  onclick(e: Event): void {
+    if (e.target[&#x27;className&#x27;].includes(&#x27;list-item&#x27;) || e.target[&#x27;className&#x27;].includes(&#x27;search-input&#x27;)) {
+    } else {
+      this.showDropdown &#x3D; false;
+    }
+  }
+
+  /**
+   * This method will identify the event propogation source and perform appropriate actions.
+   * If the source is mouse:
+   * Only the @var activeItem will be set with the @var currentPosition
+   *
+   * The event communication follows the @interface ListMessageModel. If the action is the select the item(on mouse click) then the
+   * @var selectedItem will be assigned.
+   *
+   * @param {ListMessageModel} data
+   * @memberof AutoCompleteComponent
+   */
+  itemChange(data: ListMessageModel): void {
+    this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
+    if (data.select) {
+      this.setSelectedItem(data.item);
+      this.setFilteredData([]);
+      this.showDropdown &#x3D; false;
+      this.searchStr &#x3D; this.selectedItem.name;
+      this.showSpan &#x3D; true;
+    }
+  }
+
+  /**
+   * This method will reset the dropdown view
+   *
+   * @memberof AutoCompleteComponent
+   */
+
+  resetData(): void {
+    this.searchStr &#x3D; &#x27;&#x27;;
+    this.showSpan &#x3D; false;
+    this.setSelectedItem({} as Model);
+    this.setFilteredData([]);
+  }
+
+  /**
+   * This method will set the data and position when the user focuses in the input field.
+   *
+   * @param {*} e
+   * @memberof AutoCompleteComponent
+   */
+  onFocus(e: any): void {
+    this.setFilteredData(this.data.filter(i &#x3D;&gt; this.searchFilter.transform(this.searchStr, i)));
+    this.setCurrentPosition(-1);
+    this.showDropdown &#x3D; true;
+  }
+
+  /**
+   * This method will hide the display element and show the input field.
+   *
+   * @memberof AutoCompleteComponent
+   */
+  hideSpan(): void {
+    this.showSpan &#x3D; false;
+    setTimeout(() &#x3D;&gt; { this.searchElement.nativeElement.focus()}, 0);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;auto-complete&quot;&gt;
+  &lt;div class&#x3D;&quot;input-container&quot;&gt;
+    &lt;div
+      class&#x3D;&quot;meta font-regular&quot;
+      *ngIf&#x3D;&quot;showSpan&quot;
+      [ngClass]&#x3D;&quot;{ &#x27;w-100&#x27;: showSpan, &#x27;w-0&#x27;: !showSpan }&quot;
+      (click)&#x3D;&quot;hideSpan()&quot;&gt;
+      {{ selectedItem.name }}
+    &lt;/div&gt;
+    &lt;input
+      [hidden]&#x3D;&quot;showSpan&quot;
+      type&#x3D;&quot;text&quot;
+      class&#x3D;&quot;search-input font-regular&quot;
+      placeholder&#x3D;&quot;Search Users by ID, address, name....&quot;
+      [(ngModel)]&#x3D;&quot;searchStr&quot;
+      (focus)&#x3D;&quot;onFocus($event)&quot;
+      #search /&gt;
+    &lt;span class&#x3D;&quot;clear font-regular-italic&quot; (click)&#x3D;&quot;resetData()&quot;&gt;Clear&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span *ngIf&#x3D;&quot;showDropdown&quot;&gt;
+    &lt;div
+      class&#x3D;&quot;scroll-view&quot;
+      appScrollView
+      [rowHeight]&#x3D;&quot;151&quot;
+      [totalRowElements]&#x3D;&quot;data.length&quot;
+      [currentItem]&#x3D;&quot;currentPosition&quot;
+      [maxHeight]&#x3D;&quot;400&quot;&gt;
+      &lt;app-list-view
+        [listData]&#x3D;&quot;filteredData&quot;
+        [selectedDataItem]&#x3D;&quot;activeItem&quot;
+        [searchString]&#x3D;&quot;searchStr&quot;
+        (itemChange)&#x3D;&quot;itemChange($event)&quot;
+        *ngIf&#x3D;&quot;filteredData.length&quot; &gt;&lt;/app-list-view&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;no-result&quot; *ngIf&#x3D;&quot;!filteredData.length &amp;&amp; searchStr !&#x3D;&#x3D; &#x27;&#x27;&quot;&gt;
+      No Users Found
+    &lt;/div&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./auto-complete.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">$height: 40px;
+$indent: 15px;
+.auto-complete {
+  width: 100%;
+  -webkit-box-shadow: 0 1px 8px -3px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 1px 8px -3px rgba(0, 0, 0, 0.21);
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    .meta {
+      overflow: hidden;
+      text-indent: $indent;
+      height: $height;
+      line-height: $height;
+      padding-top: 2px;
+    }
+    .search-input {
+      width: 100%;
+      height: $height;
+      background: white;
+      border: none;
+      border-radius: 3px;
+      text-indent: $indent;
+      outline: none;
+      font-size: 1em;
+      &amp;:focus {
+        background-color: white;
+        border-bottom: 1px solid #eaeaea;
+      }
+    }
+    .clear {
+      height: $height;
+      line-height: $height;
+      font-size: 0.8em;
+      color: blue;
+      padding: 2px 8px 0 8px;
+      cursor: pointer;
+      &amp;:hover {
+        font-weight: 800 !important;
+      }
+    }
+  }
+  .no-result {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-0 {
+  width: 0px !important;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="auto-complete">  <div class="input-container">    <div      class="meta font-regular"      *ngIf="showSpan"      [ngClass]="{ \'w-100\': showSpan, \'w-0\': !showSpan }"      (click)="hideSpan()">      {{ selectedItem.name }}    </div>    <input      [hidden]="showSpan"      type="text"      class="search-input font-regular"      placeholder="Search Users by ID, address, name...."      [(ngModel)]="searchStr"      (focus)="onFocus($event)"      #search />    <span class="clear font-regular-italic" (click)="resetData()">Clear</span>  </div>  <span *ngIf="showDropdown">    <div      class="scroll-view"      appScrollView      [rowHeight]="151"      [totalRowElements]="data.length"      [currentItem]="currentPosition"      [maxHeight]="400">      <app-list-view        [listData]="filteredData"        [selectedDataItem]="activeItem"        [searchString]="searchStr"        (itemChange)="itemChange($event)"        *ngIf="filteredData.length" ></app-list-view>    </div>    <div class="no-result" *ngIf="!filteredData.length && searchStr !== \'\'">      No Users Found    </div>  </span></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'ListViewComponent', 'selector': 'app-list-view'}];
+    var DIRECTIVES = [{'name': 'ScrollViewDirective', 'selector': '[appScrollView]'}];
+    var ACTUAL_COMPONENT = {'name': 'AutoCompleteComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AutoCompleteComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
