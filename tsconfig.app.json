@@ -2,7 +2,21 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+      "components/*": [
+        "src/app/components/*"
+      ],
+      "pages/*": [
+        "app/pages/*"
+      ],
+      "utils/*": [
+        "src/app/utils/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts"
@@ -11,10 +25,4 @@
     "src/test.ts",
     "src/**/*.spec.ts"
   ],
-  "paths": {
-    "src/*": ["src/*"],
-    "components/*": ["src/app/components/*"],
-    "pages/*": ["app/pages/*"],
-    "utils/*": ["src/app/utils/*"]
-},
 }
