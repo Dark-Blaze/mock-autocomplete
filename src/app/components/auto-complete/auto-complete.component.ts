@@ -94,7 +94,7 @@ export class AutoCompleteComponent implements OnInit {
   @HostListener('document:keyup', ['$event'])
   keyup(e: KeyboardEvent): void {
     this.keyHandler(e);
-    this.setDataAndPosition();
+    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
   }
 
   /**
@@ -176,17 +176,11 @@ export class AutoCompleteComponent implements OnInit {
     }
   }
 
-
-
-  /**
-   * This method will set the filteredData set and reset the current position everytime the data is re-filtered.
-   *
-   * @memberof AutoCompleteComponent
-   */
-  setDataAndPosition(): void {
-    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
-    if (!this.getFilteredData().length || this.getFilteredData().length === 1) {
-      this.setCurrentPosition(0);
+  @HostListener('document:click', ['$event'])
+  onclick(e: Event) {
+    if (e.target['className'].includes('list-item') || e.target['className'].includes('search-input')) {
+    } else {
+      this.showDropdown = false;
     }
   }
 
@@ -202,14 +196,13 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
   itemChange(data: ListMessageModel) {
-    if (data.from !== 'mouse') {
-      this.setCurrentPosition(data.index);
-    }
     this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
     if (data.select) {
       this.setSelectedItem(data.item);
       this.setFilteredData([]);
-      this.resetBehaivour();
+      this.showDropdown = false;
+      this.searchStr = this.selectedItem.name;
+      this.showSpan = true;
     }
   }
 
@@ -218,17 +211,12 @@ export class AutoCompleteComponent implements OnInit {
    *
    * @memberof AutoCompleteComponent
    */
-  resetBehaivour() {
-    this.showSpan = true;
-    this.showDropdown = false;
-    this.searchStr = this.selectedItem.name;
-  }
 
   resetData() {
     this.searchStr = '';
+    this.showSpan = false;
     this.setSelectedItem({} as Model);
     this.setFilteredData([]);
-    this.showSpan = false;
   }
 
   /**
@@ -238,14 +226,9 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
   onFocus(e: any) {
-    this.setDataAndPosition();
+    this.setFilteredData(this.data.filter(i => this.searchFilter.transform(this.searchStr, i)));
+    this.setCurrentPosition(-1);
     this.showDropdown = true;
-  }
-
-  onBlur() {
-    if (this.getFilteredData().length === 1) {
-      this.resetBehaivour();
-    }
   }
 
   /**

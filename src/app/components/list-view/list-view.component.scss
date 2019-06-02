@@ -6,9 +6,6 @@
       padding: 20px;
       line-height: 1.5;
       cursor: pointer;
-      &:hover {
-        background-color: rgba(255, 246, 125, 0.17);
-      }
       & > .list-item-value {
         pointer-events: none;
       }
