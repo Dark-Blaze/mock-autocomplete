@@ -116,21 +116,31 @@ export class AutoCompleteComponent implements OnInit {
   setSelectedItem(item: Model): void {
     this.selectedItem = item;
   }
-
   getCurrentPosition(): number {
     return this.currentPosition;
   }
-
   setCurrentPosition(pos: number): void {
     this.currentPosition = pos;
   }
-
   setActiveItem(item: Model): void {
     this.activeItem = item;
   }
   getActiveItem(): Model {
     return this.activeItem;
   }
+  setFilteredData(items: Array<Model>): void {
+    this.filteredData = items;
+  }
+  getFilteredData(): Array<Model> {
+    return this.filteredData;
+  }
+  isStartPosition(): boolean {
+    return this.getCurrentPosition() === 0;
+  }
+  isEndPosition(): boolean {
+    return this.getCurrentPosition() === this.getFilteredData().length - 1;
+  }
+
 
   /**
    * This method will identify the up, down and enter key events and perform appropriate actions
@@ -150,18 +160,10 @@ export class AutoCompleteComponent implements OnInit {
       const code = e['keyCode'];
       if (code === KEY_SUPPORT.ARROW_UP) {
         e.preventDefault();
-        if (this.getCurrentPosition() === 0) {
-          this.setCurrentPosition(0);
-        } else {
-          this.setCurrentPosition(this.getCurrentPosition() - 1)
-        }
+        this.setCurrentPosition(this.isStartPosition() ? 0 : this.getCurrentPosition() - 1);
       } else if (code === KEY_SUPPORT.ARROW_DOWN) {
         e.preventDefault();
-        if (this.getCurrentPosition() === this.getFilteredData().length - 1) {
-          this.setCurrentPosition(this.getFilteredData().length - 1);
-        } else {
-          this.setCurrentPosition(this.currentPosition + 1);
-        }
+        this.setCurrentPosition(this.isEndPosition() ? this.getFilteredData().length - 1 : this.getCurrentPosition() + 1);
       } else if (code === KEY_SUPPORT.ENTER) {
         this.itemChange({
           e,
@@ -174,13 +176,7 @@ export class AutoCompleteComponent implements OnInit {
     }
   }
 
-  setFilteredData(items: Array<Model>): void {
-    this.filteredData = items;
-  }
 
-  getFilteredData(): Array<Model> {
-    return this.filteredData;
-  }
 
   /**
    * This method will set the filteredData set and reset the current position everytime the data is re-filtered.
@@ -212,6 +208,7 @@ export class AutoCompleteComponent implements OnInit {
     this.setActiveItem(this.getFilteredData()[this.getCurrentPosition()]);
     if (data.select) {
       this.setSelectedItem(data.item);
+      this.setFilteredData([]);
       this.resetBehaivour();
     }
   }
@@ -222,10 +219,16 @@ export class AutoCompleteComponent implements OnInit {
    * @memberof AutoCompleteComponent
    */
   resetBehaivour() {
-    this.setFilteredData([]);
     this.showSpan = true;
     this.showDropdown = false;
     this.searchStr = this.selectedItem.name;
+  }
+
+  resetData() {
+    this.searchStr = '';
+    this.setSelectedItem({} as Model);
+    this.setFilteredData([]);
+    this.showSpan = false;
   }
 
   /**
@@ -239,6 +242,12 @@ export class AutoCompleteComponent implements OnInit {
     this.showDropdown = true;
   }
 
+  onBlur() {
+    if (this.getFilteredData().length === 1) {
+      this.resetBehaivour();
+    }
+  }
+
   /**
    * This method will hide the display element and show the input field.
    *
@@ -246,7 +255,7 @@ export class AutoCompleteComponent implements OnInit {
    */
   hideSpan() {
     this.showSpan = false;
-    setTimeout(() => {this.searchElement.nativeElement.focus()}, 0);
+    setTimeout(() => { this.searchElement.nativeElement.focus()}, 0);
   }
 
 }

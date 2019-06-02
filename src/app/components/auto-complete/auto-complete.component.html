@@ -17,6 +17,7 @@
       (focus)="onFocus($event)"
       #search
     />
+    <span class="clear font-regular-italic" (click)="resetData()">Clear</span>
   </div>
   <span *ngIf="showDropdown">
     <div

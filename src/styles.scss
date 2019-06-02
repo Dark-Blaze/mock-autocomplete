@@ -10,6 +10,7 @@
 body {
   @extend .font-regular;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .text-mute {
