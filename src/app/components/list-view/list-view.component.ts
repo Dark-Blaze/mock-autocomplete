@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Model, ListMessageModel } from '../auto-complete/Model';
+import { Model, ListMessageModel } from 'components/auto-complete/model';
 import { SearchFilterPipe } from '../../utils/search-filter.pipe';
 
 @Component({
