@@ -16,7 +16,7 @@ export class SearchFilterPipe implements PipeTransform {
        *
        */
       if (typeof val === 'string' || typeof val === 'number') {
-        if (searchVal && val.toString().toLowerCase().includes(searchVal.toLowerCase().trim())) {
+        if (searchVal && val.toString().toLowerCase().includes(searchVal.toLowerCase())) {
           return true;
         }
       } else if (typeof val === 'object' || Array.isArray(val)) {
