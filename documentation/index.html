@@ -31,6 +31,24 @@
                    <div class="content-data">
 
 <h1 id="mockautocomplete">MockAutocomplete</h1>
+<h3 id="demo">Demo:</h3>
+<p>https://app-mock-autocomplete.herokuapp.com/ </p>
+<h3 id="documentation">Documentation:</h3>
+<p>https://dark-blaze.github.io/mock-autocomplete/documentation/overview.html  </p>
+<h2 id="to-run-it-locally">To run it locally:</h2>
+<ul>
+<li>Clone the project</li>
+<li>Execute npm i or yarn install</li>
+<li>Execute ng serve</li>
+<li>Open  <code>http://localhost:4200/</code></li>
+</ul>
+<h2 id="bugsbehavior-deviation">Bugs/Behavior deviation:</h2>
+<ul>
+<li>The current version does not cater to moving from the last mouse-selected item when the up and down arrow keys&#39; are pressed.</li>
+<li>The cursor position starts from the top every time the data is filtered after moving out of the input field.</li>
+<li>If the focus is not out and the data is re-filtered, the highlighted/active row item carries the last position value set. </li>
+<li>The current keybinding code is inside the autocomplete. It can be removed to convert it into a directive.</li>
+</ul>
 <p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 8.0.1.</p>
 <h2 id="development-server">Development server</h2>
 <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>

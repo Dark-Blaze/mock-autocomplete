@@ -194,8 +194,7 @@ export class SearchFilterPipe implements PipeTransform {
        *
        */
       if (typeof val &#x3D;&#x3D;&#x3D; &#x27;string&#x27; || typeof val &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
-        if (searchVal &amp;&amp; val.toString().toLowerCase().includes(searchVal.toLowerCase().trim())) {
-          val &#x3D; &#x60;&lt;span&gt;${val}&lt;/span&gt;&#x60;;
+        if (searchVal &amp;&amp; val.toString().toLowerCase().includes(searchVal.toLowerCase())) {
           return true;
         }
       } else if (typeof val &#x3D;&#x3D;&#x3D; &#x27;object&#x27; || Array.isArray(val)) {

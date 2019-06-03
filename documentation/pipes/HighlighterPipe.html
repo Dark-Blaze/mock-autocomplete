@@ -177,15 +177,11 @@
 export class HighlighterPipe implements PipeTransform {
   transform(text: string, search): string {
     if (typeof text !&#x3D;&#x3D; &#x27;object&#x27; || !Array.isArray(text)) {
-      let pattern &#x3D; search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, &#x27;\\$&amp;&#x27;);
-      pattern &#x3D; pattern.split(&#x27; &#x27;).filter((t) &#x3D;&gt; {
-        return t.length &gt; 0;
-      }).join(&#x27;|&#x27;);
-      const regex &#x3D; new RegExp(pattern, &#x27;gi&#x27;);
-      return search ? text.replace(regex, (match) &#x3D;&gt; &#x60;&lt;span class&#x3D;&quot;highlight&quot;&gt;${match}&lt;/span&gt;&#x60;) : text;
+      return text.replace(new RegExp(&#x27;(&#x27; + search + &#x27;)&#x27;, &#x27;gi&#x27;), &#x27;&lt;span class&#x3D;&quot;highlight&quot;&gt;$1&lt;/span&gt;&#x27;);
     }
   }
 }
+
 </code></pre>
     </div>
 
